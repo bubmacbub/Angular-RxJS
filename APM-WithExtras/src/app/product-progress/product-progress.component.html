@@ -1,0 +1,6 @@
+<aside>
+    <h4>Progress</h4>
+    <div *ngIf="selectedProductFields$ | async as fields">
+        {{fields.percentage}}
+    </div>
+</aside>

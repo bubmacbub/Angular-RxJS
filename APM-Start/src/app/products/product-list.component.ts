@@ -10,7 +10,7 @@ import { ProductService } from './product.service';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit, OnDestroy {
-  pageTitle = 'Product List';
+  pageTitle = 'Product Listss';
   errorMessage = '';
   categories;
 
@@ -37,5 +37,6 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
   onSelected(categoryId: string): void {
     console.log('Not yet implemented');
+    console.log(categoryId);
   }
 }

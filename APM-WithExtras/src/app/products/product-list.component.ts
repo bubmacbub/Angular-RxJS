@@ -6,6 +6,7 @@ import { catchError, map } from 'rxjs/operators';
 import { ProductService } from './product.service';
 import { ProductCategoryService } from '../product-categories/product-category.service';
 import { Product } from './product';
+import { Router } from '@angular/router';
 
 @Component({
   templateUrl: './product-list.component.html',
@@ -57,7 +58,7 @@ export class ProductListComponent {
         ({ products, categories }))
     );
 
-  constructor(private productService: ProductService,
+  constructor(private productService: ProductService, private router: Router,
               private productCategoryService: ProductCategoryService) { }
 
   onAdd(): void {
@@ -73,7 +74,16 @@ export class ProductListComponent {
   }
 
   onSelected(categoryId: string): void {
+    console.log("selected" + categoryId);
     this.categorySelectedSubject.next(+categoryId);
+  }
+
+  productSelected(product: Product)
+  {
+    console.log("selected product");
+    console.log(product);
+    this.productService.selectedProductChanged(product.id);
+    this.router.navigate(['/products/details']);
   }
 
   onUpdate(product: Product): void {

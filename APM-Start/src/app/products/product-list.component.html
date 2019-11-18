@@ -28,14 +28,14 @@
         <thead>
           <tr>
             <th>Product</th>
-            <th>Code</th>
+            <th>Code 1</th>
             <th>Category</th>
             <th>Price</th>
             <th>In Stock</th>
           </tr>
         </thead>
-        <tbody *ngFor="let product of products">
-          <tr>
+        <tbody *ngFor="let product of products; let i = index;">
+          <tr (click)="onSelected(i)">
             <td>{{ product.productName }}</td>
             <td>{{ product.productCode }}</td>
             <td>{{ product.categoryId }}</td>

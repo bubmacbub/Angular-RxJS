@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { ProductListComponent } from './product-list.component';
 import { ProductShellComponent } from './product-list-alt/product-shell.component';
@@ -17,6 +17,10 @@ import { ProductListAltComponent } from './product-list-alt/product-list-alt.com
       {
         path: '',
         component: ProductListComponent
+      },
+      {
+        path: 'details',
+        component: ProductDetailComponent
       },
       {
         path: ':alternate',

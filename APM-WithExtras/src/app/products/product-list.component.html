@@ -34,15 +34,15 @@
         <thead>
           <tr>
             <th>Product</th>
-            <th>Code</th>
+            <th>Code 1</th>
             <th>Category</th>
             <th>Price</th>
             <th>In Stock</th>
             <th></th>
           </tr>
         </thead>
-        <tbody *ngFor="let product of vm.products">
-          <tr>
+        <tbody *ngFor="let product of vm.products; let i = index;">
+          <tr (click)="productSelected(product)">
             <td>{{ product.productName }}</td>
             <td>{{ product.productCode }}</td>
             <td>{{ product.category }}</td>
